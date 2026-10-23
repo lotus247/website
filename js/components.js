@@ -3,11 +3,11 @@ const waLink = (msg) => `https://wa.me/${HOSPITAL.wa}?text=${encodeURIComponent(
 
 function docCard(d){
   return `<article class="doc">
-    <div class="ph" aria-hidden="true">${d.featured ? "❀" : "+"}</div>
+    <div class="ph">${d.photo ? `<img src="${d.photo}" alt="${d.name}" loading="lazy">` : "+"}</div>
     <div class="body">
       <h3>${d.name}</h3>
       <p class="qual">${d.qual}</p>
-      <p class="spec">${d.spec}</p>
+      <p class="spec">${d.desig||d.spec}</p>
       <p class="time">${d.days} · ${d.time}</p>
       <div class="acts">
         <a class="btn btn-line" href="#/doctor/${d.id}">View profile</a>

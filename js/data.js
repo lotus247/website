@@ -8,35 +8,179 @@ const HOSPITAL = {
 const P = t => `<span class="ph-tag">&lt;add ${t}&gt;</span>`;
 
 const DOCTORS = [
-  { id:"veeramma", name:"Dr. Ch. Veeramma", qual:"MBBS, MD (OBG), DGO (Bombay), FMAS",
-    spec:"Obstetrics & Gynecology", exp:"19+ years", type:"Full-time",
-    days:"Monday – Saturday", time:"10:00 AM–2:00 PM, 4:00 PM–7:00 PM", featured:true,
-    bio:"Dr. Ch. Veeramma is an obstetrician and gynecologist with over 19 years of clinical experience across government and private healthcare. She cares for women through every stage of life, with a particular focus on high-risk pregnancy, infertility and minimal access surgery.",
-    services:["Antenatal and high-risk pregnancy care","Normal and painless deliveries","Laparoscopic gynecological surgery","Infertility evaluation and treatment","PCOS and menstrual disorder management"] },
-  { id:"ortho", name:"&lt;add doctor name&gt;", qual:"MBBS, MS (Orthopedics)", spec:"Orthopedics",
-    exp:"&lt;add&gt;", type:"&lt;full-time / visiting&gt;", days:"&lt;add days&gt;", time:"&lt;add timings&gt;",
-    bio:"Profile to be provided by the hospital.", services:["Joint pain and arthritis care","Fracture and trauma management","Sports injury treatment"] },
-  { id:"cardio", name:"&lt;add doctor name&gt;", qual:"MBBS, MD, DM (Cardiology)", spec:"Cardiology",
-    exp:"&lt;add&gt;", type:"&lt;full-time / visiting&gt;", days:"&lt;add days&gt;", time:"&lt;add timings&gt;",
-    bio:"Profile to be provided by the hospital.", services:["ECG and echo evaluation","Hypertension management","Heart failure follow-up"] },
-  { id:"peds", name:"&lt;add doctor name&gt;", qual:"MBBS, MD (Pediatrics)", spec:"Pediatrics & Neonatology",
-    exp:"&lt;add&gt;", type:"&lt;full-time / visiting&gt;", days:"&lt;add days&gt;", time:"&lt;add timings&gt;",
-    bio:"Profile to be provided by the hospital.", services:["Newborn care","Childhood vaccination","Growth and nutrition advice"] },
-  { id:"genmed", name:"&lt;add doctor name&gt;", qual:"MBBS, MD (General Medicine)", spec:"General Medicine",
-    exp:"&lt;add&gt;", type:"&lt;full-time / visiting&gt;", days:"&lt;add days&gt;", time:"&lt;add timings&gt;",
-    bio:"Profile to be provided by the hospital.", services:["Fever and infection care","Thyroid and lifestyle disorders","Routine health evaluation"] },
-  { id:"pulmo", name:"&lt;add doctor name&gt;", qual:"MBBS, MD (Pulmonology)", spec:"Pulmonology",
-    exp:"&lt;add&gt;", type:"&lt;full-time / visiting&gt;", days:"&lt;add days&gt;", time:"&lt;add timings&gt;",
-    bio:"Profile to be provided by the hospital.", services:["Asthma and COPD care","Chronic cough evaluation","Pulmonary function testing"] },
-  { id:"diab", name:"&lt;add doctor name&gt;", qual:"MBBS, &lt;add qualification&gt;", spec:"Diabetology",
-    exp:"&lt;add&gt;", type:"&lt;full-time / visiting&gt;", days:"&lt;add days&gt;", time:"&lt;add timings&gt;",
-    bio:"Profile to be provided by the hospital.", services:["Diabetes management","Diabetic foot care","Diet and insulin counselling"] },
-  { id:"neuro", name:"&lt;add doctor name&gt;", qual:"MBBS, MD, DM (Neurology)", spec:"Neurology",
-    exp:"&lt;add&gt;", type:"&lt;full-time / visiting&gt;", days:"&lt;add days&gt;", time:"&lt;add timings&gt;",
-    bio:"Profile to be provided by the hospital.", services:["Headache and migraine care","Seizure management","Stroke follow-up"] },
-  { id:"eye", name:"&lt;add doctor name&gt;", qual:"MBBS, MS (Ophthalmology)", spec:"Ophthalmology",
-    exp:"&lt;add&gt;", type:"&lt;full-time / visiting&gt;", days:"&lt;add days&gt;", time:"&lt;add timings&gt;",
-    bio:"Profile to be provided by the hospital.", services:["Vision testing","Cataract evaluation","Diabetic eye screening"] }
+ {
+  "id": "veeramma",
+  "name": "Dr. Ch. Veeramma",
+  "qual": "MBBS, DGO, MD, FMAS",
+  "desig": "Sr. Obstetrician & Gynecologist, Infertility Specialist, Laparoscopic Surgeon",
+  "spec": "Obstetrics & Gynecology",
+  "photo": "assets/doctors/veeramma.jpg",
+  "exp": "19+ years",
+  "type": "Full-time",
+  "days": "&lt;add days&gt;",
+  "time": "&lt;add timings&gt;",
+  "bio": "Dr. Ch. Veeramma is a senior obstetrician and gynecologist with over 19 years of clinical experience across government and private healthcare. She cares for women at every stage of life, with a focus on high-risk pregnancy, infertility and laparoscopic surgery.",
+  "services": [
+   "Antenatal and high-risk pregnancy care",
+   "Normal and painless deliveries",
+   "Laparoscopic gynecological surgery",
+   "Infertility evaluation and treatment",
+   "PCOS and menstrual disorders"
+  ],
+  "featured": true
+ },
+ {
+  "id": "prameela",
+  "name": "Dr. Prameela",
+  "qual": "MBBS, DGO",
+  "desig": "Senior Obstetrician & Gynecologist Specialist",
+  "spec": "Obstetrics & Gynecology",
+  "photo": "assets/doctors/prameela.jpg",
+  "exp": "&lt;add&gt;",
+  "type": "&lt;full-time / visiting&gt;",
+  "days": "&lt;add days&gt;",
+  "time": "&lt;add timings&gt;",
+  "bio": "Dr. Prameela is a senior obstetrician and gynecologist who works alongside Dr. Veeramma in the hospital's women's health and maternity department.",
+  "services": [
+   "Antenatal check-ups",
+   "Delivery and postnatal care",
+   "Menstrual and hormonal problems",
+   "Contraceptive counselling"
+  ]
+ },
+ {
+  "id": "prashanthi",
+  "name": "Dr. N V Prashanthi",
+  "qual": "MBBS, MD (General Medicine), DM (Neurology), Gold Medalist",
+  "desig": "Neurologist",
+  "spec": "Neurology",
+  "photo": "assets/doctors/prashanthi.jpg",
+  "exp": "&lt;add&gt;",
+  "type": "&lt;full-time / visiting&gt;",
+  "days": "&lt;add days&gt;",
+  "time": "&lt;add timings&gt;",
+  "bio": "Dr. N V Prashanthi is a gold-medalist neurologist trained in general medicine and neurology, treating disorders of the brain, spinal cord and nerves.",
+  "services": [
+   "Stroke and seizure care",
+   "Headache and migraine",
+   "Neuropathy and nerve disorders",
+   "Dizziness and memory concerns"
+  ]
+ },
+ {
+  "id": "kiran",
+  "name": "Dr. G. Kiran Kumar",
+  "qual": "MS (Ophthal), Fellowship in Phaco (Sankara Nethralaya, Chennai)",
+  "desig": "Eye Specialist",
+  "spec": "Ophthalmology",
+  "photo": "assets/doctors/kiran.jpg",
+  "exp": "&lt;add&gt;",
+  "type": "&lt;full-time / visiting&gt;",
+  "days": "&lt;add days&gt;",
+  "time": "&lt;add timings&gt;",
+  "bio": "Dr. G. Kiran Kumar is an eye surgeon who completed a phacoemulsification fellowship at Sankara Nethralaya, Chennai, and treats common and complex eye conditions.",
+  "services": [
+   "Cataract evaluation and phaco surgery",
+   "Diabetic eye screening",
+   "Glaucoma and retina check",
+   "Vision testing"
+  ]
+ },
+ {
+  "id": "firoz",
+  "name": "Dr. SK. Firoz",
+  "qual": "MBBS, MD (General Medicine)",
+  "desig": "General Physician & Consultant Diabetologist",
+  "spec": "General Medicine & Diabetology",
+  "photo": "assets/doctors/firoz.jpg",
+  "exp": "&lt;add&gt;",
+  "type": "&lt;full-time / visiting&gt;",
+  "days": "&lt;add days&gt;",
+  "time": "&lt;add timings&gt;",
+  "bio": "Dr. SK. Firoz is a general physician and consultant diabetologist, caring for everyday illness as well as long-term conditions such as diabetes, thyroid disease and hypertension.",
+  "services": [
+   "Fever and infections",
+   "Diabetes management",
+   "Thyroid and blood pressure care",
+   "Preventive health checkups"
+  ]
+ },
+ {
+  "id": "vennala",
+  "name": "Dr. K. Vennala",
+  "qual": "MBBS, DNB (Paed), PGPn (USA)",
+  "desig": "Neonatologist & Paediatrician Specialist",
+  "spec": "Paediatrics & Neonatology",
+  "photo": "assets/doctors/vennala.jpg",
+  "exp": "&lt;add&gt;",
+  "type": "&lt;full-time / visiting&gt;",
+  "days": "&lt;add days&gt;",
+  "time": "&lt;add timings&gt;",
+  "bio": "Dr. K. Vennala is a paediatrician and neonatologist with additional training in the USA, caring for newborns, premature babies and growing children.",
+  "services": [
+   "Newborn and premature baby care",
+   "Vaccination and growth monitoring",
+   "Childhood infections and asthma",
+   "Nutrition and development advice"
+  ]
+ },
+ {
+  "id": "tulasiram",
+  "name": "Dr. Ch. Tulasiram",
+  "qual": "MS (Ortho)",
+  "desig": "Orthopedic Surgeon",
+  "spec": "Orthopedics",
+  "photo": "assets/doctors/tulasiram.jpg",
+  "exp": "&lt;add&gt;",
+  "type": "&lt;full-time / visiting&gt;",
+  "days": "&lt;add days&gt;",
+  "time": "&lt;add timings&gt;",
+  "bio": "Dr. Ch. Tulasiram is an orthopedic surgeon treating injuries and disorders of bones, joints and the spine.",
+  "services": [
+   "Fractures and trauma",
+   "Joint pain and arthritis",
+   "Sports and ligament injuries",
+   "Back and neck pain"
+  ]
+ },
+ {
+  "id": "vijay",
+  "name": "Dr. Vijay Amarnath Reddy",
+  "qual": "MD, DM (NIMS)",
+  "desig": "Interventional Cardiologist",
+  "spec": "Cardiology",
+  "photo": "assets/doctors/vijay.jpg",
+  "exp": "&lt;add&gt;",
+  "type": "&lt;full-time / visiting&gt;",
+  "days": "&lt;add days&gt;",
+  "time": "&lt;add timings&gt;",
+  "bio": "Dr. Vijay Amarnath Reddy is an interventional cardiologist trained at NIMS, Hyderabad, treating heart disease from prevention to emergency care.",
+  "services": [
+   "Chest pain and heart attack evaluation",
+   "Hypertension and heart failure",
+   "ECG and echo evaluation",
+   "Interventional cardiology consultation"
+  ]
+ },
+ {
+  "id": "sreeram",
+  "name": "Dr. K. Sreeram Kumar",
+  "qual": "MD Gold Medalist (Pulmonary Medicine)",
+  "desig": "General Physician, Specialist in Pulmonary Medicine & Respiratory Disorders",
+  "spec": "Pulmonology",
+  "photo": "assets/doctors/sreeram.jpg",
+  "exp": "&lt;add&gt;",
+  "type": "&lt;full-time / visiting&gt;",
+  "days": "&lt;add days&gt;",
+  "time": "&lt;add timings&gt;",
+  "bio": "Dr. K. Sreeram Kumar is a gold-medalist pulmonologist and general physician who treats lung and breathing disorders.",
+  "services": [
+   "Asthma and COPD",
+   "Chronic cough and breathlessness",
+   "Tuberculosis and pneumonia",
+   "Lung function testing"
+  ]
+ }
 ];
 
 const DEPARTMENTS = [
@@ -93,3 +237,139 @@ const BLOGS = [
   {t:"Knee and joint pain: home care and warning signs", c:"Orthopedics", d:"&lt;add date&gt;"}
 ];
 
+
+const DEPT_INFO = {
+ "Obstetrics & Gynecology": {
+  "docs": [
+   "veeramma",
+   "prameela"
+  ],
+  "treats": [
+   "Antenatal and high-risk pregnancy care",
+   "Normal, painless and cesarean delivery",
+   "PCOS, fibroids and menstrual disorders",
+   "Menopause and well-woman care"
+  ]
+ },
+ "Orthopedics": {
+  "docs": [
+   "tulasiram"
+  ],
+  "treats": [
+   "Fractures and trauma",
+   "Joint pain and arthritis",
+   "Sports and ligament injuries",
+   "Back and neck pain"
+  ]
+ },
+ "Cardiology": {
+  "docs": [
+   "vijay"
+  ],
+  "treats": [
+   "Chest pain and heart attack evaluation",
+   "Hypertension and heart failure",
+   "ECG and echo evaluation",
+   "Interventional cardiology consultation"
+  ]
+ },
+ "Pediatrics & Neonatology": {
+  "docs": [
+   "vennala"
+  ],
+  "treats": [
+   "Newborn and premature baby care",
+   "Vaccination and growth monitoring",
+   "Fever, infections and asthma in children",
+   "Nutrition and development advice"
+  ]
+ },
+ "General Medicine": {
+  "docs": [
+   "firoz"
+  ],
+  "treats": [
+   "Fever and infections",
+   "Thyroid and lifestyle disorders",
+   "Hypertension follow-up",
+   "Routine health evaluation"
+  ]
+ },
+ "Pulmonology": {
+  "docs": [
+   "sreeram"
+  ],
+  "treats": [
+   "Asthma and COPD",
+   "Chronic cough and breathlessness",
+   "Tuberculosis and pneumonia",
+   "Lung function testing"
+  ]
+ },
+ "Diabetology": {
+  "docs": [
+   "firoz"
+  ],
+  "treats": [
+   "Type 1 and type 2 diabetes",
+   "Insulin and medication planning",
+   "Diabetic foot and kidney screening",
+   "Diet and lifestyle counselling"
+  ]
+ },
+ "Ophthalmology": {
+  "docs": [
+   "kiran"
+  ],
+  "treats": [
+   "Cataract evaluation and phaco surgery",
+   "Diabetic eye screening",
+   "Glaucoma and retina check",
+   "Vision testing"
+  ]
+ },
+ "Neurology": {
+  "docs": [
+   "prashanthi"
+  ],
+  "treats": [
+   "Stroke and seizure care",
+   "Headache and migraine",
+   "Neuropathy and nerve disorders",
+   "Dizziness and memory concerns"
+  ]
+ },
+ "Laparoscopic Surgery": {
+  "docs": [
+   "veeramma"
+  ],
+  "treats": [
+   "Laparoscopic hysterectomy",
+   "Myomectomy and ovarian cystectomy",
+   "Diagnostic laparoscopy",
+   "Smaller cuts, faster recovery"
+  ]
+ },
+ "Fertility & Infertility Care": {
+  "docs": [
+   "veeramma"
+  ],
+  "treats": [
+   "Couple fertility evaluation",
+   "Ovulation tracking and induction",
+   "PCOS-related infertility",
+   "Counselling and follow-up"
+  ]
+ },
+ "Preventive Health Checkups": {
+  "docs": [
+   "firoz"
+  ],
+  "treats": [
+   "Diabetes and blood pressure screening",
+   "Heart and lipid profile",
+   "Women's health screening",
+   "Customised annual packages"
+  ]
+ }
+};
