@@ -222,10 +222,36 @@ const CLINICS = [
 const WOMENS = ["Antenatal care","High-risk pregnancy management","Normal and painless deliveries","Postnatal care and lactation support","Ultrasound scans and fetal monitoring","Cesarean section","Menstrual disorders treatment","PCOS / PCOD management","Fibroids, cysts and endometriosis treatment","Infertility evaluation and treatment","Contraceptive counseling","HPV vaccination and cervical cancer screening","Laparoscopic hysterectomy","Laparoscopic myomectomy","Laparoscopic ovarian cystectomy","Diagnostic laparoscopy","Tubal ligation / recanalization","Pre-marital and pre-conception counseling","Adolescent gynecology","Menopause clinic","Well-woman health checkups"];
 
 const INSURERS = [
-  {name:"&lt;add insurance company name&gt;", tpa:"&lt;add TPA&gt;", cashless:"Yes", person:"&lt;add contact person&gt;", phone:"&lt;add number&gt;", note:"Pre-authorization required"},
-  {name:"&lt;add insurance company name&gt;", tpa:"&lt;add TPA&gt;", cashless:"Yes", person:"&lt;add contact person&gt;", phone:"&lt;add number&gt;", note:"Bring policy card and ID proof"},
-  {name:"&lt;add insurance company name&gt;", tpa:"&lt;add TPA&gt;", cashless:"Reimbursement only", person:"&lt;add contact person&gt;", phone:"&lt;add number&gt;", note:"&lt;add restrictions, if any&gt;"},
-  {name:"&lt;add insurance company name&gt;", tpa:"—", cashless:"Yes", person:"&lt;add contact person&gt;", phone:"&lt;add number&gt;", note:"&lt;add notes&gt;"}
+  {name:"TTK Health Care TPA Pvt. Ltd", tpa:"Vidal Health TPA", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Pre-authorisation and policy conditions apply."},
+  {name:"Medi Assist India Pvt. Ltd", tpa:"Medi Assist", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Pre-authorisation and policy conditions apply."},
+  {name:"Good Health Plan Ltd", tpa:"Good Health Plan", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Policy validation is required before treatment."},
+  {name:"Care Health Management & TPA Services Pvt. Ltd", tpa:"Care Health", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Cashless approval depends on policy coverage and treatment eligibility."},
+  {name:"Paramount Health Services Pvt. Ltd", tpa:"Paramount Health", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Bring policy card and ID proof for approval."},
+  {name:"E-Meditek TPA", tpa:"E-Meditek", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Please share policy details at admission."},
+  {name:"MD India Health Care Services (P) Ltd", tpa:"MD India", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Pre-authorisation may be required for planned admissions."},
+  {name:"Medicare TPA Services (P) Ltd", tpa:"Medicare TPA", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Policy terms and diagnosis eligibility apply."},
+  {name:"United HealthCare Parekh India Pvt. Ltd", tpa:"United HealthCare Parekh", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Please carry your health card and ID proof."},
+  {name:"Health India Pvt. Ltd", tpa:"Health India", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Pre-authorisation and diagnosis approval are required."},
+  {name:"Vipul Medicorp TPA Pvt. Ltd", tpa:"Vidal Health / Vipul Medicorp", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Relevant policy and TPA process must be completed before treatment."},
+  {name:"Star Health and Allied Insurance", tpa:"Star Health", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Please bring your policy card and Member ID."},
+  {name:"Family Health Plan Ltd", tpa:"Family Health Plan", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Cashless approval depends on insurer and TPA rules."},
+  {name:"L&T General Insurance", tpa:"L&T Insurance", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Kindly confirm policy eligibility before admission."},
+  {name:"Genius (TPA) Pvt. Ltd", tpa:"Genius TPA", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Policy-specific approval process applies."},
+  {name:"Bajaj Allianz TPA", tpa:"Bajaj Allianz", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Please share policy information at registration."},
+  {name:"Universal Sompo General Insurance", tpa:"Universal Sompo", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Cashless facility depends on policy and treatment category."},
+  {name:"Religare", tpa:"Care Health / Religare", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Pre-authorisation and documentation are required."},
+  {name:"Cigna TTK", tpa:"Cigna TTK", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Approval from the insurer or TPA is required for cashless claims."},
+  {name:"Apollo Munich Health Insurance", tpa:"Apollo Munich", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Please bring the policy card and valid ID."},
+  {name:"HDFC Ergo General Insurance", tpa:"HDFC Ergo", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Policy and treatment eligibility must be verified before admission."},
+  {name:"Medsave", tpa:"Medsave", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Please provide policy and member details for approval."},
+  {name:"Cholamandalam MS General Insurance Company Ltd.", tpa:"Chola MS", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Cashless approval depends on policy terms and diagnosis."},
+  {name:"Liberty Videocon General Insurance", tpa:"Liberty Videocon", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Kindly confirm eligibility before treatment begins."},
+  {name:"Future Generali India Insurance", tpa:"Future Generali", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Pre-authorisation is generally required for planned procedures."},
+  {name:"Reliance General Insurance", tpa:"Reliance", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Please share the policy number and claim details at registration."},
+  {name:"ICICI Lombard General Insurance", tpa:"ICICI Lombard", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Cashless and reimbursement depend on the policy."},
+  {name:"Tata AIG General Insurance", tpa:"Tata AIG", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Please bring the policy card and valid ID proof."},
+  {name:"Park Health Insurance TPA Pvt. Ltd", tpa:"Park Health", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Policy-specific approval is required."},
+  {name:"Health Insurance TPA Pvt. Ltd", tpa:"Health Insurance TPA", cashless:"Yes", person:"Insurance desk", phone:"Please confirm at reception", note:"Please complete the required TPA approval process before admission."}
 ];
 
 const BLOGS = [
