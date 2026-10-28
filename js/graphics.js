@@ -18,6 +18,7 @@ const ICONS = {
   calendar:"M4 6h16v14H4zM4 10h16M8 3v4M16 3v4",
   pin:"M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11zM12 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"
 };
+Object.assign(ICONS, {book:"M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 21V5M9 7h6M9 11h6", calc:"M5 3h14v18H5zM8 7h8M8 11h2M12 11h2M8 15h2M12 15h2M8 18h8", image:"M3 5h18v14H3zM3 16l5-5 4 4 3-3 6 6M9 9h.01"});
 const DEPT_IC = {
   "Obstetrics & Gynecology":"heart","Orthopedics":"bone","Cardiology":"pulse","Pediatrics & Neonatology":"smile",
   "General Medicine":"plus","Pulmonology":"lungs","Diabetology":"drop","Ophthalmology":"eye","Neurology":"brain",

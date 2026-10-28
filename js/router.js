@@ -13,6 +13,8 @@ function render(){
     case "doctor": html = pages.doctor(seg[1]); break;
     case "services": html = pages.services(); break;
     case "clinics": html = pages.clinics(); break;
+    case "library": html = pages.library(); break;
+    case "calculators": html = pages.calculators(); break;
     case "insurance": html = pages.insurance(); break;
     case "blogs": html = pages.blogs(); break;
     case "gallery": html = pages.gallery(); break;
@@ -31,6 +33,8 @@ function render(){
   document.getElementById('menuBtn').setAttribute('aria-expanded','false');
   window.scrollTo({top:0,behavior:'instant'});
   wireUp();
+  if(typeof initCalcs==='function') initCalcs();
+  if(typeof initLibrary==='function') initLibrary();
   if(typeof Anim!=='undefined') Anim.refresh();
 }
 

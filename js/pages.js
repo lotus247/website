@@ -33,7 +33,7 @@ pages.home = () => `
 
 <section class="band stats"><div class="wrap"><div class="statgrid">
   <div class="stat"><b data-count="${new Date().getFullYear()-2014}" data-suffix="+">0</b><span>Years of care</span></div>
-  <div class="stat"><b data-count="50">0</b><span>Hospital beds</span></div>
+  <div class="stat"><b data-count="100">0</b><span>Hospital beds</span></div>
   <div class="stat"><b data-count="5">0</b><span>ICU beds</span></div>
   <div class="stat"><b data-count="9">0</b><span>Specialties</span></div>
   <div class="stat"><b data-count="3">0</b><span>Locations</span></div>
@@ -41,26 +41,15 @@ pages.home = () => `
 
 <section class="band">
   <div class="wrap">
-    <div class="head"><h2>Departments</h2><p>Find the right specialist for what you are dealing with.</p></div>
-    <div class="grid g4">
-      ${DEPARTMENTS.map(d=>`<div class="card"><span class="icowrap">${ico(DEPT_IC[d.name])}</span><h3>${d.name}</h3><p>${d.desc}</p></div>`).join("")}
-    </div>
-    <div class="btn-row"><a class="btn btn-line" href="#/services">See all services</a></div>
-  </div>
-</section>
-
-<section class="band soft">
-  <div class="wrap">
-    <div class="head"><h2>Meet our doctors</h2><p>Consultants across nine specialties, seeing patients through the week.</p></div>
-    <div class="grid g4">${DOCTORS.slice(0,8).map(docCard).join("")}</div>
-    <div class="btn-row"><a class="btn btn-pink" href="#/doctors">View all doctors</a></div>
+    <div class="head"><h2>Everything you need, in one place</h2><p>Each section of the hospital has its own page.</p></div>
+    <div class="grid g4">${[['users','Our doctors','Nine specialists with qualifications, photos and timings.','doctors'],['plus','Services','Twelve departments, what each treats and who to see.','services'],['pin','Our clinics','Veda Clinic and Sankalpa Clinic across Nellore.','clinics'],['book','Health library','Plain-language guides to common conditions.','library'],['calc','Calculators','Fifteen tools: GFR, BMI, body fat, due date, calories and a colour vision test.','calculators'],['shield','Insurance & TPA','Cashless support and the documents to bring.','insurance'],['image','Gallery','The hospital, our team and health camps.','gallery'],['calendar','Book appointment','Request a slot; we confirm by phone.','appointment']].map(([ic,t,d,r])=>`<a class="card tile-link" href="#/${r}"><span class="icowrap">${ico(ic)}</span><h3>${t}</h3><p>${d}</p></a>`).join("")}</div>
   </div>
 </section>
 
 <section class="band">
   <div class="wrap">
     <div class="feature">
-      <div class="photo" style="aspect-ratio:3/4">Doctor photo ${P("Dr. Veeramma image")}</div>
+      <div class="photo pimg" style="aspect-ratio:3/4"><img src="${DOCTORS[0].photo}" alt="${DOCTORS[0].name}"></div>
       <div>
         <span class="badge">Women's health &amp; maternity</span>
         <h2>Dr. Ch. Veeramma</h2>
@@ -75,44 +64,11 @@ pages.home = () => `
   </div>
 </section>
 
-<section class="band">
-  <div class="wrap">
-    <div class="head"><h2>Three locations across Nellore</h2><p>The main hospital plus two outpatient clinics, all staffed by the same doctors.</p></div>
-    <div class="grid g3">
-      <div class="card"><h3>Lotus Hospital, Pogathota</h3><p>50 beds, 5 ICU beds, operation theatre and 24/7 emergency care. Beside S2 Cinema Hall.</p></div>
-      <div class="card"><h3>Veda Clinic</h3><p>Outpatient consultations and follow-ups, with referral to the hospital when needed.</p></div>
-      <div class="card"><h3>Sankalpa Clinic</h3><p>Consultations closer to home, running to the same clinical protocols.</p></div>
-    </div>
-    <div class="btn-row"><a class="btn btn-line" href="#/clinics">About our clinics</a></div>
-  </div>
-</section>
-
 <section class="band soft">
-  <div class="wrap">
-    <div class="head"><h2>Why families choose Lotus Hospital</h2></div>
-    <div class="grid g3">
-      <div class="card"><span class="icowrap">${ico('users')}</span><h3>Specialists in one place</h3><p>Nine departments under one roof, so you are not sent across the city for a second opinion.</p></div>
-      <div class="card"><span class="icowrap">${ico('clock')}</span><h3>Emergency care, any hour</h3><p>The emergency room is staffed 24 hours a day, every day of the year.</p></div>
-      <div class="card"><span class="icowrap">${ico('heart')}</span><h3>Maternity expertise</h3><p>Complete pregnancy care, painless delivery and newborn support from an experienced team.</p></div>
-      <div class="card"><span class="icowrap">${ico('shield')}</span><h3>Insurance and cashless help</h3><p>A dedicated desk handles pre-authorization and paperwork with your insurer or TPA.</p></div>
-      <div class="card"><span class="icowrap">${ico('calendar')}</span><h3>Simple booking</h3><p>Request an appointment on WhatsApp or through the website and the team calls you back.</p></div>
-      <div class="card"><span class="icowrap">${ico('pin')}</span><h3>Easy to reach</h3><p>Located in Pogathota, central Nellore, with ${P("parking details")}.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="band">
-  <div class="wrap">
-    <div class="head"><h2>Insurance and TPA</h2><p>Multiple insurance and TPA providers are accepted for cashless treatment and reimbursement.</p></div>
-    <div class="grid g4">${[1,2,3,4].map(()=>`<div class="card" style="text-align:center;color:var(--muted)">Insurer logo ${P("logo")}</div>`).join("")}</div>
-    <div class="btn-row"><a class="btn btn-line" href="#/insurance">View all insurance providers</a></div>
-  </div>
-</section>
-
-<section class="band">
-  <div class="wrap">
-    <div class="head"><h2>Request an appointment</h2><p>Fill in a few details and the hospital team will call you to confirm a slot.</p></div>
-    ${apptForm("", "hospital")}
+  <div class="wrap" style="text-align:center">
+    <h2>Need care right now?</h2>
+    <p style="margin:0 auto 1em">The emergency room is open 24 hours a day, every day. OP runs 10 AM to 2 PM and 4 PM to 7 PM.</p>
+    <div class="btn-row" style="justify-content:center"><a class="btn btn-pink" href="tel:${HOSPITAL.tel}">Call ${HOSPITAL.phone}</a><a class="btn btn-wa" href="${waLink('Hello Lotus Hospital')}" target="_blank" rel="noopener">WhatsApp</a><a class="btn btn-line" href="#/appointment">Book appointment</a></div>
   </div>
 </section>`;
 
@@ -121,7 +77,7 @@ pages.about = () => `
   <div class="wrap">
     <h1>About Lotus Hospital</h1>
     <p class="note">Established 2014 · Beside S2 Cinema Hall, Pogathota, Nellore</p>
-    <p>Lotus Hospital is a 50-bed multi-specialty hospital serving families in and around Nellore. What began as a women's health and surgery practice under Dr. Ch. Veeramma has grown into a hospital with consultants across nine specialties, 5 ICU beds, an operation theatre and round-the-clock emergency care. Two outpatient clinics — <a href="#/clinics">Veda and Sankalpa</a> — extend the same care into other parts of the city. ${P("full hospital story from the hospital")}</p>
+    <p>Lotus Hospital is a 100-bed multi-specialty hospital serving families in and around Nellore. What began as a women's health and surgery practice under Dr. Ch. Veeramma has grown into a hospital with consultants across nine specialties, 5 ICU beds, an operation theatre and round-the-clock emergency care. Two outpatient clinics — <a href="#/clinics">Veda and Sankalpa</a> — extend the same care into other parts of the city. ${P("full hospital story from the hospital")}</p>
     <div class="grid g2" style="margin-top:28px">
       <div class="card"><h3>Our mission</h3><p>${P("mission statement")} — to give every patient in Nellore specialist care that is accurate, affordable and delivered with respect.</p></div>
       <div class="card"><h3>Our vision</h3><p>${P("vision statement")} — to be the hospital families in Nellore trust first, for everything from a routine check-up to a complex surgery.</p></div>
@@ -173,12 +129,12 @@ pages.doctor = (id) => {
   <div class="wrap">
     <p class="note"><a href="#/doctors">← All doctors</a></p>
     <div class="feature">
-      <div class="photo" style="aspect-ratio:3/4">Doctor photo ${P("image")}</div>
+      <div class="photo pimg" style="aspect-ratio:3/4">${d.photo ? `<img src="${d.photo}" alt="${d.name}">` : "Doctor photo " + P("image")}</div>
       <div>
         ${d.featured?'<span class="badge">Leading women\'s health specialist</span>':''}
         <h1 style="font-size:clamp(1.7rem,3.6vw,2.4rem)">${d.name}</h1>
         <p style="color:var(--muted);margin-bottom:4px">${d.qual}</p>
-        <p class="spec" style="color:var(--pink);font-weight:600">${d.spec} · ${d.exp} experience · ${d.type}</p>
+        <p class="spec" style="color:var(--pink);font-weight:600">${d.desig || d.spec}</p><p class="note">${d.spec} · ${d.exp} experience · ${d.type}</p>
         <p>${d.bio}</p>
         <p style="color:var(--muted);font-size:.93rem">Consultation: ${d.days}, ${d.time}<br>Registration number: ${P("if the hospital wishes to display it")}<br>Languages: ${P("languages spoken")}</p>
         <div class="btn-row">
@@ -201,7 +157,7 @@ pages.clinics = () => `
     <h1>Our clinics</h1>
     <p style="font-size:1.06rem">Alongside the main hospital in Pogathota, Lotus runs two outpatient clinics across Nellore. Both are staffed by Lotus Hospital doctors and follow the same clinical standards — so a consultation at either clinic connects straight back to the hospital if you need tests, surgery or admission.</p>
     <div class="grid g3" style="margin-top:26px">
-      <div class="card"><h3>Lotus Hospital</h3><p>The main 50-bed hospital in Pogathota, with inpatient rooms, operation theatre, ICU and 24/7 emergency care.</p></div>
+      <div class="card"><h3>Lotus Hospital</h3><p>The main 100-bed hospital in Pogathota, with inpatient rooms, operation theatre, ICU and 24/7 emergency care.</p></div>
       <div class="card"><h3>Veda Clinic</h3><p>Outpatient consultations and follow-ups. ${P("locality")}</p></div>
       <div class="card"><h3>Sankalpa Clinic</h3><p>Outpatient consultations and follow-ups. ${P("locality")}</p></div>
     </div>
@@ -249,10 +205,11 @@ ${CLINICS.map((c,i)=>`
 pages.services = () => `
 <section class="band">
   <div class="wrap">
-    <h1>Services</h1>
-    <p>Care is organised by department so you can find the right specialist quickly. Every treatment page will carry what the service is, symptoms to watch for, treatment options and the doctors who handle it.</p>
-    <div class="grid g3" style="margin-top:26px">
-      ${DEPARTMENTS.map(d=>`<div class="card"><span class="icowrap">${ico(DEPT_IC[d.name])}</span><h3>${d.name}</h3><p>${d.desc}</p><div class="btn-row" style="margin-top:14px"><a class="btn btn-line" href="#/appointment">Book</a></div></div>`).join("")}
+    <h1>Services and departments</h1>
+    <p>Lotus Hospital is a 100-bed multi-specialty hospital with twelve departments under one roof. Each department below lists what it treats and the consultants you can see.</p>
+    <div class="btn-row"><a class="btn btn-pink" href="#/appointment">Book appointment</a><a class="btn btn-line" href="#/doctors">Meet the doctors</a><a class="btn btn-line" href="#/library">Health library</a></div>
+    <div class="grid g2" style="margin-top:28px">
+      ${DEPARTMENTS.map(d=>{const i=DEPT_INFO[d.name]||{docs:[],treats:[]};return `<div class="card"><span class="icowrap">${ico(DEPT_IC[d.name])}</span><h3>${d.name}</h3><p>${d.desc}</p><ul class="tl">${i.treats.map(t=>`<li>${t}</li>`).join("")}</ul><p class="note" style="margin-top:12px">Consultants: ${i.docs.map(id=>{const x=DOCTORS.find(y=>y.id===id);return `<a href="#/doctor/${id}">${x.name}</a>`}).join(", ")}</p><div class="btn-row" style="margin-top:12px"><a class="btn btn-line" href="#/appointment">Book</a></div></div>`}).join("")}
     </div>
   </div>
 </section>
