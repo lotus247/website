@@ -12,6 +12,27 @@ const ACT = fSel('act', 'Activity', [['1.2','Little or no exercise'], ['1.375','
 const LMP = {k:'lmp', l:'First day of last period', t:'date'}, CYC = fNum('cyc', 'Average cycle length (days)', 21, 40, {v:28});
 const bmr = v => 10*v.w + 6.25*v.h - 5*v.age + (v.sex === 'm' ? 5 : -161);
 
+const CALCULATOR_GUIDES = [
+  {cat:'Health & Clinical', items:[
+    {title:'GFR Calculator', image:'https://drupal-cdn-hfaeddcdbng5hfbg.a01.azurefd.net/sites/default/files/2026-09/gfr-calculator.png', desc:'The Glomerular Filtration Rate (GFR) is one of the most important indicators of kidney function.', link:'https://www.apollohospitals.com/health-calculators/gfr-calculator'},
+    {title:'BMI Calculator', image:'https://drupal-cdn-hfaeddcdbng5hfbg.a01.azurefd.net/sites/default/files/2026-04/bmi-caculater.png', desc:'Quickly check if your weight is healthy for your height using Body Mass Index.', link:'https://www.apollohospitals.com/health-calculators/bmi-calculator'},
+    {title:'Color Vision Test', image:'https://drupal-cdn-hfaeddcdbng5hfbg.a01.azurefd.net/sites/default/files/2026-04/color-vision.png', desc:'A quick screening to check how accurately you perceive colours.', link:'https://www.apollohospitals.com/health-calculators/color-vision-test'}
+  ]},
+  {cat:'Fitness & Body', items:[
+    {title:'BMR Calculator', image:'https://drupal-cdn-hfaeddcdbng5hfbg.a01.azurefd.net/sites/default/files/2026-04/bmr-caculater.png', desc:'Calculate your Basal Metabolic Rate to know how many calories your body needs at rest.', link:'https://www.apollohospitals.com/health-calculators/bmr-calculator'},
+    {title:'Body Fat Calculator', image:'https://drupal-cdn-hfaeddcdbng5hfbg.a01.azurefd.net/sites/default/files/2026-04/body-fat.png', desc:'Quickly check if your weight is healthy for your height using Body Fat Calculator.', link:'https://www.apollohospitals.com/health-calculators/body-fat-calculator'}
+  ]},
+  {cat:'Pregnancy & Cycle', items:[
+    {title:'Pregnancy Calculator', image:'https://drupal-cdn-hfaeddcdbng5hfbg.a01.azurefd.net/sites/default/files/2026-09/pregnancy-calculator.png', desc:'A simple tool that helps estimate how far along a pregnancy is and predicts the expected due date (EDD).', link:'https://www.apollohospitals.com/health-calculators/pregnancy-calculator'},
+    {title:'Ovulation Calculator', image:'https://drupal-cdn-hfaeddcdbng5hfbg.a01.azurefd.net/sites/default/files/2026-09/ovulation-calculator.png', desc:'An ovulation calculator estimates when an ovary is likely to release an egg during a menstrual cycle.', link:'https://www.apollohospitals.com/health-calculators/ovulation-calculator'},
+    {title:'Period Calculator', image:'https://drupal-cdn-hfaeddcdbng5hfbg.a01.azurefd.net/sites/default/files/2026-09/period-calendar.png', desc:'Track your menstrual cycle online and estimate your next cycle pattern.', link:'https://www.apollohospitals.com/health-calculators/period-calculator'}
+  ]},
+  {cat:'Nutrition & Macros', items:[
+    {title:'TDEE Calculator', image:'https://drupal-cdn-hfaeddcdbng5hfbg.a01.azurefd.net/sites/default/files/2026-09/tdee-calculator.png', desc:'A TDEE calculator estimates how many calories your body burns each day.', link:'https://www.apollohospitals.com/health-calculators/tdee-calculator'},
+    {title:'Calorie Calculator', image:'https://drupal-cdn-hfaeddcdbng5hfbg.a01.azurefd.net/sites/default/files/2026-09/calorie-calculator.png', desc:'A calorie calculator helps estimate the number of calories your body needs each day to maintain, lose, or gain weight.', link:'https://www.apollohospitals.com/health-calculators/calorie-calculator'}
+  ]}
+];
+
 /* Colour vision screening: dot plates drawn on a canvas */
 const CV_CTRL = [['#d9c9a3','#cdb98a','#e3d7b5'], ['#2a5d9f','#3b73b8','#1f4a85']];
 const CV_RG = [['#e07b3c','#d9653a','#eb9a5a','#c9553b'], ['#8fae4f','#a4bf5e','#7a9a46','#b3c76d']];
