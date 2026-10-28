@@ -141,14 +141,26 @@ const CALCS = [
 const calcField = (c, f) => `<div class="field"><label for="${c.id}-${f.k}">${f.l}</label>` + (f.t === 'select'
   ? `<select id="${c.id}-${f.k}">${f.o.map(o => `<option value="${o[0]}">${o[1]}</option>`).join('')}</select>`
   : `<input id="${c.id}-${f.k}" type="${f.t}" ${f.min !== undefined ? `min="${f.min}" max="${f.max}" step="any"` : ''} ${f.v ? `value="${f.v}"` : ''}>`) + '</div>';
+const calcGuideCard = item => `
+  <article class="card" style="padding:0;overflow:hidden;display:flex;flex-direction:column">
+    <img src="${item.image}" alt="${item.title}" style="width:100%;height:170px;object-fit:cover;border-bottom:1px solid var(--line)">
+    <div style="padding:18px 18px 16px;display:flex;flex-direction:column;gap:12px;height:100%">
+      <div>
+        <h3 style="margin:0 0 10px; font-size:1.12rem">${item.title}</h3>
+        <p style="margin:0; color:var(--muted)">${item.desc}</p>
+      </div>
+      <a class="btn btn-line" href="${item.link}" target="_blank" rel="noopener">Know More</a>
+    </div>
+  </article>`;
 const calcCard = c => `<div class="card calc" data-calc="${c.id}"><span class="icowrap">${ico(c.ic)}</span><h3>${c.title}</h3><p>${c.desc}</p>` + (c.custom ? c.html
   : `<div class="fields" style="margin-top:14px">${c.f.map(f => calcField(c, f)).join('')}</div><div class="calc-out" aria-live="polite">Enter the values above to see your result.</div>`) + '</div>';
 pages.calculators = () => `
 <section class="band"><div class="wrap">
   <h1>Health calculators</h1>
   <p>${CALCS.length} quick tools for common health questions. Results are estimates to help you plan, not a diagnosis. Nothing you type here is stored or sent.</p>
-  <div class="chips" id="calcChips" style="margin-top:20px"><button class="chip" aria-pressed="true" data-cat="all">All</button>${CATS.map(c => `<button class="chip" aria-pressed="false" data-cat="${c}">${c}</button>`).join('')}</div>
-  ${CATS.map(cat => `<div class="cgroup" data-cat="${cat}"><h2 style="margin:34px 0 16px;font-size:1.5rem">${cat}</h2><div class="grid g2">${CALCS.filter(c => c.cat === cat).map(calcCard).join('')}</div></div>`).join('')}
+  <p class="note" style="margin:18px 0 10px">Choose a category to view the calculators for that section.</p>
+  <div class="chips" id="calcChips" style="margin-top:12px">${CATS.map(c => `<button class="chip" aria-pressed="false" data-cat="${c}">${c}</button>`).join('')}</div>
+  ${CATS.map(cat => `<div class="cgroup" data-cat="${cat}" style="display:none"><h2 style="margin:34px 0 16px;font-size:1.5rem">${cat}</h2><div class="grid g2">${CALCS.filter(c => c.cat === cat).map(calcCard).join('')}</div></div>`).join('')}
   <p class="note" style="margin-top:26px">Questions about a result? <a href="#/appointment">Book a consultation</a> or read the <a href="#/library">health library</a>.</p>
 </div></section>`;
 
@@ -168,5 +180,5 @@ function initCalcs(){
   const ch = document.getElementById('calcChips');
   if(ch) ch.addEventListener('click', e => { const b = e.target.closest('.chip'); if(!b) return;
     ch.querySelectorAll('.chip').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
-    document.querySelectorAll('.cgroup').forEach(g => g.style.display = (b.dataset.cat === 'all' || g.dataset.cat === b.dataset.cat) ? '' : 'none'); });
+    document.querySelectorAll('.cgroup').forEach(g => g.style.display = (g.dataset.cat === b.dataset.cat) ? '' : 'none'); });
 }

@@ -12,6 +12,7 @@
   --green:#127A5B;
   --radius:14px;
   --wrap:1140px;
+  --shadow-soft:0 10px 26px rgba(31,27,78,.08);
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
   padding-bottom:env(safe-area-inset-bottom,0px);
@@ -20,11 +21,13 @@
   :root:not([data-theme="light"]){
     --bg:#12112A; --card:#1A1840; --ink:#E7ECF5; --navy:#F3F6FB; --muted:#9FADC4;
     --line:#2A2750; --pink:#FF6EA5; --pink-soft:#1C1941; --pink-line:#3A3466;
+    --shadow-soft:0 16px 32px rgba(8,8,20,.3);
   }
 }
 :root[data-theme="dark"]{
   --bg:#12112A; --card:#1A1840; --ink:#E7ECF5; --navy:#F3F6FB; --muted:#9FADC4;
   --line:#2A2750; --pink:#FF6EA5; --pink-soft:#1C1941; --pink-line:#3A3466;
+  --shadow-soft:0 16px 32px rgba(8,8,20,.3);
 }
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
@@ -35,8 +38,8 @@ body{
   font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
 }
 img{max-width:100%;display:block}
-a{color:var(--pink);text-decoration:none}
-a:hover{text-decoration:underline}
+a{color:var(--pink);text-decoration:none;transition:color .2s ease, transform .2s ease}
+a:hover{text-decoration:none;transform:translateY(-1px)}
 :focus-visible{outline:3px solid var(--pink);outline-offset:2px;border-radius:6px}
 h1,h2,h3,h4{font-family:Fraunces,Georgia,'Times New Roman',serif;font-weight:600;color:var(--navy);line-height:1.18;margin:0 0 .5em}
 h1{font-size:clamp(2rem,5vw,3.25rem)}
@@ -47,6 +50,9 @@ p{margin:0 0 1em;max-width:72ch}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .skip{position:absolute;left:-999px;top:0;background:var(--pink);color:#fff;padding:10px 16px;z-index:200}
 .skip:focus{left:8px;top:8px}
+
+.card,.doc,.tile-link,.fact,.feature,.photo,.chip,.btn,.btn-row > *,input,select,textarea,.tablewrap{transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease, background-color .2s ease}
+.card:hover,.doc:hover,.tile-link:hover,.fact:hover,.feature:hover,.photo:hover,.chip:hover,.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-soft);border-color:var(--pink-line)}
 
 /* ---------- top emergency strip ---------- */
 .emerg{background:var(--navy);color:#fff;font-size:.86rem}

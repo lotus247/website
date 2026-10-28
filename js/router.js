@@ -35,6 +35,7 @@ function render(){
   wireUp();
   if(typeof initCalcs==='function') initCalcs();
   if(typeof initLibrary==='function') initLibrary();
+  if(typeof bindInteractiveMotion==='function') bindInteractiveMotion();
   if(typeof Anim!=='undefined') Anim.refresh();
 }
 
